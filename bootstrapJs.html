@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<title>BootstrapJs</title>
+</head>
+
+<style>
+body{padding: 10px;background-color:#ffe}
+hr{height:1px;border:none;border-top:1px solid #999;}
+.lead{color: #A23B3B;}
+.grid [class *= col-]{background-color:#eee;border: 1px solid #ccc;}
+.scrollspy-example{height:500px;overflow:auto;}
+.btn{margin:10px 10px 20px;}
+</style>
+
+<body data-spy="scroll" data-target="#navbar-menu">
+	<!-- The navigation part -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- button部分可省略 -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Bootstrap</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="active"><a href="#">History</a></li>
+						<li><a href="#">International</a></li>
+						<li><a href="#">Travel</a></li>
+						<li><a href="#">Politcs</a></li>
+						<li class="disabled"><a href="#">Military</a></li>
+					</ul>
+				</li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Album</a></li>
+				<li><a href="#">Article</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="starter-template text-center" style="padding-top: 70px;">
+			<h1>JavaScript Plug-in of Bootstrap</h1>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<!-- ********************************************** MODAL ********************************************** -->
+
+		<p class="lead">[ Modal ]</p>
+		<button class="btn btn-info" type="button" data-toggle="modal" data-target="#mymodal1" data-backdrop="static" >
+			Date-Toggle
+		</button>
+		<div class="modal fade" id="mymodal1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title">Modal Title</h4>
+					</div>
+					<div class="modal-body">
+						<p>This is the body of the date-toggle-triggled modal</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-lg" data-keyboard="true">
+			Big Modal
+		</button>
+
+		<div class="modal fade bs-example-modal-lg" tabindex="-1"role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button> 
+						<h4 class="modal-title">Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<p class="text-center">This is the body of the big modal</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm" data-backdrop="true" data-keyboard="false">
+			Small Modal
+		</button>
+
+		<div class="modal fade bs-example-modal-sm" tanindex="-1" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4>Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<p class="text-center">This is the body of the small modal</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button class="btn btn-primary" id="js-btn" data-toggle="modal" data-target="#modal-js">
+			Js-Toggle
+		</button>
+		<div class="modal fade" id="modal-js" tanindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4>Modal title</h4>
+					</div>
+					<div class="modal-body">
+						<p>This is the body of the js-toggled-modal</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Save changes</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+
+		<!-- ********************************************** DROPDOWN ********************************************** -->
+
+		<p class="lead">[ Dropdown ]</p>
+		<h4>Dropdown menu by div.navbar</h4>
+		<div class="navbar navbar-default" role="navgation">
+			<a href="#" class="navbar-brand">Apple</a>
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" data-toggle="dropdown" class="dropdown-toggle active" role="button">iPhone<span class="caret"></a>
+					<ul class="dropdown-menu" role="menu">
+						<li role="presentation" class="active"><a>iPhone4</a></li>
+						<li role="presentation"><a>iPhone4s</a></li>
+						<li role="presentation"><a>iPhone5</a></li>
+						<li role="presentation"><a>iPhone5s</a></li>
+						<li role="presentation"><a>iPhone5c</a></li>
+						<li role="presentation"><a>iPhone6</a></li>
+						<li role="presentation"><a>iPhone6Plus</a></li>
+						<li role="presentation" class="disabled"><a>iPhone6s</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Mac</a></li>
+				<li><a href="#">iPad</a></li>
+				<li><a href="#">Watch</a></li>
+				<li><a href="#">Music</a></li>
+			</ul>
+		</div>
+		
+		<h4>Dropdown menu by ul.nav-pills</h4>
+		<ul class="nav nav-pills">
+			<li class="dropdown active">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Mac<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li class="active" role="presentation"><a href="#">Macbook Air11</a></li>
+					<li role="presentation"><a href="#">Macbook Air13</a></li>
+					<li role="presentation"><a href="#">Macbook pro13</a></li>
+					<li role="presentation"><a href="#">Macbook pro15</a></li>
+					<li role="presentation"  class="disabled"><a href="#">Macbook</a></li>
+				</ul>
+			</li>
+			<li><a href="#">iPhone</a></li>
+			<li><a href="#">iPad</a></li>
+			<li><a href="#">Watch</a></li>
+			<li><a href="#">Music</a></li>
+			<li><a href="#">Support</a></li>
+		</ul>
+		<br>
+
+		<h4>Dropdown menu by js</h4>
+		<ul class="nav nav-pills">
+			<li class="dropdown active">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">    <!-- data-toggle="dropdown" -->
+					Music<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" role="menu">
+					<li role="presentation" class="active"><a href="#">Soft</a></li>
+					<li role="presentation"><a href="#">Fork</a></li>
+					<li role="presentation"><a href="#">Rap</a></li>
+					<li role="presentation"><a href="#">Blues</a></li>
+					<li role="presentation"><a href="#">Lounge</a></li>
+					<li role="presentation"><a href="#">Country</a></li>
+					<li role="presentation" class="disabled"><a href="#">Jazz</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Fashion</a></li>
+			<li><a href="#">Chicken</a></li>
+			<li><a href="#">House</a></li>
+			<li><a href="#">Car</a></li>
+		</ul>
+		<hr>
+
+		<!-- ********************************************** SCROLLSPY ********************************************** -->
+
+		<p class="lead">[ ScrollSpy ]</p>
+		<div class="bs-docs-section">
+			<p class="text-muted">The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p><br>
+			<div class="bs-example">
+				<nav role="navigation" class="navbar navbar-default navbar-static navbar-inverse" id="navbar-menu"> <!--为导航条定义ID以方便监控-->
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button data-target=".collapse" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="#" class="navbar-brand">Project Name</a>
+						</div>
+
+						<!-- 监控对象的内容放在scrollspy的容器中，容器中有多个子容器，并拥有各自的ID，分别和导航中锚点对应,data-target和导航id一致 -->
+						<div class="collapse navbar-collapse" data-target="navbar-menu" id="scrollspy">   
+							<ul class="nav navbar-nav">
+								<li><a href="#fat">@fat</a></li>
+								<li><a href="#mdo">@mdo</a></li>
+								<li class="dropdown">
+									<a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" id="navbarDrop1" href="#">Dropdown <span class="caret"></span></a>
+									<ul aria-labelledby="navbarDrop1" role="menu" class="dropdown-menu">
+										<li><a tabindex="-1" href="#one">one</a></li>
+										<li><a tabindex="-1" href="#two">two</a></li>
+										<li class="divider"></li>
+										<li><a tabindex="-1" href="#three">three</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<div class="scrollspy-example" data-offset="60" data-target="#navbar-menu" data-spy="scroll">
+					<h4 id="fat">@fat</h4>
+					<p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+					<h4 id="mdo">@mdo</h4>
+					<p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+					<h4 id="one">one</h4>
+					<p>Occaecat commodo aliqua delectus. Fap craft beer deserunt skateboard ea. Lomo bicycle rights adipisicing banh mi, velit ea sunt next level locavore single-origin coffee in magna veniam. High life id vinyl, echo park consequat quis aliquip banh mi pitchfork. Vero VHS est adipisicing. Consectetur nisi DIY minim messenger bag. Cred ex in, sustainable delectus consectetur fanny pack iphone.</p>
+					<h4 id="two">two</h4>
+					<p>In incididunt echo park, officia deserunt mcsweeney's proident master cleanse thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry richardson master cleanse. Assumenda you probably haven't heard of them art party fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial keffiyeh eu banh mi sustainable. Elit wolf voluptate, lo-fi ea portland before they sold out four loko. Locavore enim nostrud mlkshk brooklyn nesciunt.</p>
+					<h4 id="three">three</h4>
+					<p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+					<p>Keytar twee blog, culpa messenger bag marfa whatever delectus food truck. Sapiente synth id assumenda. Locavore sed helvetica cliche irony, thundercats you probably haven't heard of them consequat hoodie gluten-free lo-fi fap aliquip. Labore elit placeat before they sold out, terry richardson proident brunch nesciunt quis cosby sweater pariatur keffiyeh ut helvetica artisan. Cardigan craft beer seitan readymade velit. VHS chambray laboris tempor veniam. Anim mollit minim commodo ullamco thundercats.
+					</p>
+				</div>
+			</div>
+			<hr>
+	
+			<!-- ********************************************** TABS ********************************************** -->
+
+			<p class="lead">[ Tabs ]</p>
+			<h4>Nav-tabs</h4>
+			<!-- nav-tabs -->
+			<ul id="myTab" class="nav nav-tabs" role="tablist">
+				<li class="active"><a href="#Food" role="tab" data-toggle="tab">Food</a></li>     <!-- Type the "active" to "acitve",cost 20 mins to find it T^T -->
+				<li><a href="#Travel" role="tab" data-toggle="tab">Travel</a></li>
+				<li><a href="#Shopping" role="tab" data-toggle="tab">Shopping</a></li>
+				<li><a href="#Houses" role="tab" data-toggle="tab">Houses</a></li>
+				<li><a href="#Fashion" role="tab" data-toggle="tab">Fashion</a></li>
+			</ul>
+			<!-- Tab-pane -->
+			<div class="tab-content" id="myTabContent">     <!-- Type the "content" to "Content",30 mins to find this mistake -->
+				<div class="tab-pane fade in active" id="Food">Food from all over the world.</div>     <!-- Type the "fade" to "fadd" ,10 mins to find it... -->
+				<div class="tab-pane fade" id="Travel">Where is your next desitination?</div>
+				<div class="tab-pane fade" id="Shopping">Find something interesting.</div>
+				<div class="tab-pane fade" id="Houses">What kind of houses do you like?</div>
+				<div class="tab-pane fade" id="Fashion">What is popular this summer?</div>
+			</div>
+			<br>
+
+			<h4>Nav-pills</h4>
+			<!-- Nac-tabs -->
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#Apple" role="tab" data-toggle="pill">Apple</a></li>
+				<li><a href="#Pear" role="tab" data-toggle="pill">Pear</a></li>
+				<li><a href="#Strawberry" role="tab" data-toggle="pill">Strawberry</a></li>
+				<li><a href="#Grape" role="tab" data-toggle="pill">Grape</a></li>
+				<li><a href="#Watermelon" role="tab" data-toggle="pill">Watermelon</a></li>
+			</ul>
+			<!-- Tab-pane -->
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="Apple">I am an apple.</div>
+				<div class="tab-pane fade" id="Pear">I am a pear.</div>
+				<div class="tab-pane fade" id="Strawberry">I am a strawberry.</div>
+				<div class="tab-pane fade" id="Grape">I am a grape.</div>
+				<div class="tab-pane fade" id="Watermelon">I am a watermelon</div>
+			</div>
+			<br>
+
+			<h4>Nav-Js</h4>
+			<ul class="nav nav-tabs" id="myJsTab">
+				<li class="active"><a href="#apple" role="tab">Apple</a></li>
+				<li><a href="#pear" role="tab">Pear</a></li>
+				<li><a href="#strawberry" role="tab">Strawberry</a></li>
+				<li><a href="#grape" role="tab">Grape</a></li>
+				<li><a href="#watermelon" role="tab">Watermelon</a></li>
+			</ul>
+			<!-- Tab-pane -->
+			<div class="tab-content">
+				<div class="tab-pane fade in active" id="apple">I am an apple.</div>
+				<div class="tab-pane fade" id="pear">I am a pear.</div>
+				<div class="tab-pane fade" id="strawberry">I am a strawberry.</div>
+				<div class="tab-pane fade" id="grape">I am a grape.</div>
+				<div class="tab-pane fade" id="watermelon">I am a watermelon</div>
+			</div>
+			<hr>
+
+			<!-- ********************************************** TOOLTIP ********************************************** -->
+
+			<p class="lead">[ Tooltip ]</p>
+			<button type="button" 
+					class="btn btn-default" 
+					data-toggle="tooltip" 
+					data-placement="left" 
+					data-original-title="I am a Left-Tooltip.">Left-tooltip
+			</button>
+			<button type="button" 
+					class="btn btn-primary" 
+					data-toggle="tooltip" 
+					data-placement="right" 
+					data-original-title="I am a Right-tooltip">Right-tooltip
+			</button>
+			<button type="button" 
+					class="btn btn-success" 
+					data-toggle="tooltip" 
+					data-placement="top" 
+					data-original-title="I am a Top-tooltip">Top-tooltip
+			</button>
+			<button type="button" 
+					class="btn btn-warning" 
+					data-toggle="tooltip" 
+					data-placement="bottom" 
+					data-original-title="I am a Bottom-tooltip">Bottom-tooltip
+			</button>
+			<button type="button" 
+					class="btn btn-danger"  
+					id="myTooltip" >Js-Certain-Tooltip  <!-- 通过js出发特定的按钮提示框时不用data-toggle,否则与前面的弹出框的js代码冲突 -->
+			</button>
+  			<button type="button" 
+  					class="btn btn-info" 
+  					data-toggle="tooltip" 
+  					data-placement="left" 
+  					data-original-title="data-animation='true'"
+  					data-animation="true"
+					data-animation="true">data-animation
+			</button>
+ 			<button type="button" 
+  					class="btn btn-danger" 
+  					data-toggle="tooltip" 
+  					data-placement="top" 
+				    data-original-title="<h1>data-html='true'</h1>"
+  					data-html="true">data-html
+  			</button>
+			<button type="button" 
+  					class="btn btn-warning" 
+  					data-toggle="tooltip" 
+  					data-placement="bottom" 
+  					data-delay="1000"
+  					data-original-title="data-trigger='click'"
+  					data-trigger="click">data-trigger
+  			</button>
+  			<hr>
+			
+			<!-- 弹出框popover -->
+  			<p class="lead">[ popover ]</p>
+			<button type="button" 
+					class="btn btn-primary" 
+					data-toggle="popover"
+					id="myPopover">myPopover
+			</button>
+			<hr>
+
+			<!-- ********************************************** ALERT ********************************************** -->
+
+			<p class="lead">[ Alert ]</p>
+			<div class="alert alert-success" role="alert">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<p>Login success!</p>
+			</div>
+
+			<div class="alert alert-warning" role="alert">
+				<h4>Be careful!</h4>
+				<p>Don't tell your password to anybody...</p>
+				<a href="#" class="btn btn-danger" data-dismiss="alert">Close</a>
+			</div>
+
+			<div class="alert alert-warning" role="alert">
+				<h4>Be careful!</h4>
+				<p>Don't tell your password to anybody...</p>
+				<button type="button" class="btn btn-danger" id="close">CloseByJs</button>
+			</div>		
+
+			<!-- ********************************************** BUTTON ********************************************** -->
+
+			<p class="lead">[ loadingButton ]</p>
+			<h4>Loading Button</h4>
+			<button class="btn btn-primary" type="button" id="loadingBtn" data-loading-text="loading...">
+				loading
+			</button>
+			<h4>Radio Buttons</h4>
+			<div class="btn-group">        <!-- data-toggle="buttons" -->
+				<label class="btn btn-info">
+					<input type="radio" name="options" id="op1">Male
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="op2">Female
+				</label>
+				<label class="btn btn-danger">
+					<input type="radio" name="options" id="op3">Secret
+				</label>
+			</div>
+			<br>
+			<h4>Checkbox Buttons</h4>
+			<div class="btn-group" >	   <!-- data-toggle="buttons" -->
+				<label class="btn btn-primary">
+					<input type="checkbox" name="options" id="option1">Jogging
+				</label>
+				<label class="btn btn-info">
+					<input type="checkbox" name="options" id="option2">Swimming
+				</label>
+				<label class="btn btn-success">
+					<input type="checkbox" name="options" id="option3">Climbing
+				</label>
+				<label class="btn btn-warning">
+					<input type="checkbox" name="options" id="option4">Yoga
+				</label>
+			</div>	
+			<br>
+			<h4>Button Status</h4>
+			<button type="button" class="btn btn-default" data-toggle="button">Confirm</button>
+			<button type="button" class="btn btn-info" data-toggle="button">Confirm</button>
+			<button type="button" class="btn btn-primary" data-toggle="button">Confirm</button>
+			<button type="button" class="btn btn-success" data-toggle="button">Confirm</button>
+			<button type="button" class="btn btn-warning" data-toggle="button">Confirm</button>
+			<button type="button" class="btn btn-danger" data-toggle="button">Confirm</button>
+			<br>	
+			<hr>
+
+			<!-- ********************************************** COLLAPSE ********************************************** -->
+			
+			<!-- Collapse -->
+			<p class="lead">[ collapse ]</p>
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#panelCollapse1">Title-1</a>
+						</h4>
+					</div>
+					<div class="panel-collapse collapse in" id="panelCollapse1">
+						<div class="panel-body">The body of the panel-1</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#panelCollapse2">Title-2</a>
+						</h4>
+					</div>
+					<div class="panel-collapse collapse in" id="panelCollapse2">
+						<div class="panel-body">The body of the panel-2</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default panel-accordion">
+					<div class="panel-heading">
+						<h4 class="panel-title"> 
+							<!-- 也可以用div代替a标签，对应的href改成data-target,但是当鼠标移动到标题上不会显示下划线 -->
+							<div data-toggle="collapse" data-parent="#accordion" data-target="#panelCollapse3">Title-3</div>
+						</h4>
+					</div>
+					<div class="panel-collapse collapse in" id="panelCollapse3">
+						<div class="panel-body">The body of the panel-3</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default panel-accordion">
+					<div class="panel-heading">
+						<h4 class="panel-title" data-toggle="collapse" data-target="#panel">Title-4</h4>
+					</div>
+					<div class="panel-collapse" id="panel">
+						<div class="panel-body">
+							I am the body of the collapse panel.
+						</div>
+					</div>
+				</div>
+				<hr>
+
+			<!-- ********************************************** CAROUSEL ********************************************** -->
+			
+			<p class="lead">[ Carousel-Slideshow ]</p>
+			<div class="carousel slide" id="slideshow" data-ride="carousel" 
+				 data-wrap="ture" data-interval="2000" data-pause="hover" style="width:500px;">
+				<!-- The picture order -->
+				<ol class="carousel-indicators">
+				 	<li data-target="#slideshow" data-slide-to="0" class="active"></li>
+				 	<li data-target="#slideshow" data-slide-to="1"></li>
+				 	<li data-target="#slideshow" data-slide-to="2"></li>
+				 	<li data-target="#slideshow" data-slide-to="3"></li>
+				 	<li data-target="#slideshow" data-slide-to="4"></li>
+				 	<li data-target="#slideshow" data-slide-to="5"></li>
+				 	<li data-target="#slideshow" data-slide-to="6"></li>
+				</ol>
+				<!-- The picture will be showed -->
+				<div class="carousel-inner">
+				 	<div class="item active">
+				 		<a href="#"><img src="image/pic1.jpg" alt=""></a>
+				 		<!-- <div class="carousel-caption">
+				 			<h3>Flower1</h3>
+				 			<p>Live like a flower,elegent and strong.</p>
+				 		</div> -->
+				 	</div>
+				 	<div class="item">
+				 		<a href="#"><img src="image/pic2.jpg" alt=""></a>
+				 	</div>
+				 	<div class="item">
+				 		<a href="#"><img src="image/pic3.jpg" alt=""></a>
+				 	</div>
+				 	<div class="item">
+				 		<a href="#"><img src="image/pic4.jpg" alt=""></a>
+				 	</div>
+				 	<div class="item">
+				 		<a href="#"><img src="image/pic5.jpg" alt=""></a>
+				 	</div>
+				 	<div class="item">
+				 		<a href="#"><img src="image/pic6.jpg" alt=""></a>
+				 	</div>
+				 	<div class="item">
+				 		<a href="#"><img src="image/pic7.jpg" alt=""></a>
+				 	</div>
+				</div>
+				<!-- Pictures controller -->
+				 <a class="left carousel-control" href="#slideshow"  data-slide="prev">
+        			<span class="glyphicon glyphicon-chevron-left"></span>   <!-- &lsaquo; -->
+    			</a>
+    			<a class="right carousel-control" href="#slideshow"  data-slide="next">
+        			<span class="glyphicon glyphicon-chevron-right"></span>  <!-- &rsaquo; -->
+    			</a>
+			</div>
+			<hr>
+	
+
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<br><br><br><br>
+			<br><br><br><br>
+			<br><br><br><br>
+			<br><br><br><br>
+			<br><br><br><br>
+			<br><br><br><br>
+		</div>
+		<script>
+		$(function(){
+			$(".js-btn").click(function(){
+      		$("#modal-js").modal({		 //.modal("toggle") 反转   .modal("show") 显示   .modal("close")  关闭
+      			keyboard:false
+      		});
+      	});
+		});
+
+		$(function(){
+			$(".dropdown-toggle").dropdown();
+		})
+
+		$(function(){
+			$("#scrollspy").scrollspy({
+				target: "#navbar-menu"
+			});
+		})
+
+		$(function(){
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		
+		$(function(){
+    		$("#myJsTab a").click(function(e){
+        		e.preventDefault();
+        	$(this).tab("show");
+    		});
+		})
+		
+
+		$(function(){
+			$('#myTooltip').tooltip({
+				title:"I am a top-tooltip",
+				placement:"top"
+			});
+		});
+
+		$(function(){
+			$('#myPopover').popover({
+				title:"I am the title",
+     			content:"I am the content",
+     			placement:"right"
+			});
+		});
+
+		$(function(){
+    		$("#close").on("click",function(){
+        		$(this).alert("close");
+    		});
+		});
+
+		$(function(){
+			$("#loadingBtn").click(function(){
+				$(this).button("loading")
+			});
+		});
+
+		// $(function(){
+  //  			$("#slidershow").carousel({
+  //       		interval:2000
+  //   		});
+  //   	$("#slidershow a.left").click(function(){
+  //       	$(".carousel").carousel("prev");
+  //   	});
+  //   	$("#slidershow a.right").click(function(){
+  //       	$(".carousel").carousel("next");
+  //   		});
+		// });
+
+
+
+		</script>
+	</body>
+
+	</html>
